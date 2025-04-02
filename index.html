@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Pacientes</title>
+    <link rel="stylesheet" href="estilo.css">
+
+</head>
+<body>
+    <div class="container">
+        <h2>Formulario de Registro</h2>
+
+        <div id="page1" class="section active">
+            <h3>Datos Personales</h3>
+            <input type="text" id="nombre" placeholder="Nombre Completo"><br>
+            <input type="number" id="edad" placeholder="Edad"><br>
+            <input type="tel" id="telefono" placeholder="Número Telefónico"><br>
+            <input type="text" id="nacionalidad" placeholder="Nacionalidad"><br>
+            <button onclick="nextPage(2)">Siguiente</button>
+        </div>
+
+        <div id="page2" class="section">
+            <h3>Familiares</h3>
+            <input type="text" id="familiar_nombre" placeholder="Nombre"><br>
+            <input type="text" id="parentesco" placeholder="Parentesco"><br>
+            <input type="number" id="familiar_edad" placeholder="Edad"><br>
+            <button onclick="addFamiliar()">Agregar</button>
+            <ul id="lista_familiares"></ul>
+            <button onclick="prevPage(1)">Atrás</button>
+            <button onclick="nextPage(3)">Siguiente</button>
+        </div>
+
+        <div id="page3" class="section">
+            <h3>Condiciones de Salud</h3>
+            <input type="text" id="enfermedad" placeholder="Enfermedad"><br>
+            <input type="text" id="tiempo" placeholder="Tiempo con la enfermedad"><br>
+            <button onclick="addEnfermedad()">Agregar</button>
+            <ul id="lista_enfermedades"></ul>
+            <button onclick="prevPage(2)">Atrás</button>
+            <button onclick="nextPage(4)">Siguiente</button>
+        </div>
+
+        <div id="page4" class="section">
+            <h3>Internamientos</h3>
+            <input type="date" id="fecha"><br>
+            <input type="text" id="centro" placeholder="Centro Médico"><br>
+            <input type="text" id="diagnostico" placeholder="Diagnóstico"><br>
+            <button onclick="addInternamiento()">Agregar</button>
+            <ul id="lista_internamientos"></ul>
+            <button onclick="prevPage(3)">Atrás</button>
+            <button onclick="nextPage(5)">Siguiente</button>
+        </div>
+
+        <div id="page5" class="section">
+            <h3>Resumen</h3>
+            <pre id="output"></pre>
+            <button onclick="prevPage(4)">Atrás</button>
+            <button onclick="saveData()">Guardar</button>
+            <button id="limpiarBtn" onclick="limpiarFormulario()">Agregar nuevo</button>
+        </div>
+    </div>
+   <br>
+   <br>
+   
+   <div class="tabla-container">
+    <button id="botonToggleTabla" onclick="toggleTabla()">Mostrar Tabla</button>
+    <div style="overflow-x: auto; width: 100%;"> <!-- Contenedor para hacer la tabla desplazable -->
+        <table id="tablaDatos">
+            <thead>
+                <tr>
+                    <th>Nombre Completo</th>
+                    <th>Edad</th>
+                    <th>Teléfono</th>
+                    <th>Nacionalidad</th>
+                    <th>Familiar</th>
+                    <th>Parentesco</th>
+                    <th>Edad Familiar</th>
+                    <th>Condición</th>
+                    <th>Tiempo</th>
+                    <th>Fecha Internamiento</th>
+                    <th>Centro</th>
+                    <th>Diagnóstico</th>
+                </tr>
+            </thead>
+            <tbody id="tablaContenido"></tbody>
+        </table>
+    </div>
+</div>
+
+</div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column; /* Asegura que los elementos estén en columna */
+
+}
+table{
+    display: none; /* Oculta la tabla por defecto */
+}
+/* Contenedor principal */
+.container {
+    background: #ffffff;
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Títulos */
+h2, h3 {
+    color: #333;
+}
+
+/* Campos de entrada */
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Botones */
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Listas de familiares, enfermedades e internamientos */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background: #e9ecef;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Secciones (ocultas por defecto) */
+.section {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+   
+
+/* Contenedor principal para la tabla y botón */
+.tabla-container {
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+}
+
+/* Estilo del botón */
+#botonToggleTabla {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 10px;
+    width: 200px;
+}
+
+#botonToggleTabla:hover {
+    background-color: #218838;
+}
+
+/* Estilo de la tabla */
+#tablaDatos {
+    width: 90%;  /* Reduce el ancho para que no se desborde */
+    max-width: 800px; /* Limita el ancho máximo */
+    border-collapse: collapse;
+    margin-top: 10px;
+    overflow-x: auto;
+}
+
+/* Asegurar que la tabla no se extienda demasiado */
+#tablaDatos th, #tablaDatos td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+/* Hacer la tabla responsive */
+@media screen and (max-width: 768px) {
+    .tabla-container {
+        width: 100%;
+    }
+    
+    #tablaDatos {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
